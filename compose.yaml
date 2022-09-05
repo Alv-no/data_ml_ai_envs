@@ -1,9 +1,10 @@
 services:
   hellojax:
-    image: jax/hellojax
-    container_name: hello_jax_container
+    image: python_image
+    container_name: python_container
     volumes:
-       - .:/home/hellojax
+       - .:/home/docker_user/python_environment
+       - ../other_folder:/home/docker_user/other_folder
     tty: true
     # command: nvidia-smi
     deploy:
