@@ -1,0 +1,20 @@
+services:
+  hellojax:
+    image: jax/hellojax
+    container_name: hello_jax_container
+    volumes:
+       - .:/home/hellojax
+    tty: true
+    # command: nvidia-smi
+    deploy:
+      resources: 
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+
+
+
+
