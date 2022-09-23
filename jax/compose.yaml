@@ -1,0 +1,17 @@
+services:
+  pythonenv:
+    image: python/jax
+    container_name: python_jax
+    volumes:
+       - .:/home/docker_user/jax_environment
+    tty: true
+    deploy:
+      resources: 
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+
+
