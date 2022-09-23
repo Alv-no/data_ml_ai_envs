@@ -1,0 +1,16 @@
+services:
+  pythonenv:
+    image: python/base_analytics
+    container_name: base_analytics
+    environment:
+        JUPYTER_TOKEN: 'my_local_jupterlab'
+        JUPYTERHUB_URL: 'http://localhost:8888'
+    ports:
+      - 8888:8888
+    volumes:
+       - .:/home/docker_user/base_analytics
+    entrypoint: sh -c 'jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root'
+    tty: true
+
+
+

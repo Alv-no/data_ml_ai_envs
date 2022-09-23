@@ -1,0 +1,10 @@
+
+jupyterlab
+seaborn
+pandas
+pandas-profiling
+pyarrow
+ipywidgets
+pylint
+pytest
+commitizen
