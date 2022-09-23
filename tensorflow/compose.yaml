@@ -1,0 +1,23 @@
+services:
+  pythonenv:
+    image: python/tensorflow
+    container_name: python_tensorflow
+    environment:
+       - DISPLAY=unix$DISPLAY
+    volumes:
+       - /tmp/.X11-unix/:/tmp/.X11-unix/
+       - .:/home/docker_user/tensorflow_environment
+    devices:
+       - /dev/video0:/dev/video0
+       - /dev/video1:/dev/video1
+    tty: true
+    deploy:
+      resources: 
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+
+
